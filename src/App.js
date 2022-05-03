@@ -1,15 +1,27 @@
-import logo from './logo.svg';
+import React from 'react'
+import { Container } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import React from 'react';
-import Inicio from './paginas/inicio';
-import Uno from './paginas/uno';
-import Container from 'react-bootstrap/Container';
+import Registrar from "./pages/Registrar";
+import Estado from "./pages/Estado";
+import Consultar from './pages/Consultar';
+import Cargar from './pages/Cargar';
+
 
 function App() {
   return (
-//sdasdasdasdas
-    <Container > <Inicio/> <Uno/>
+    <Container>
+
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/registrar" element={<Registrar/>} />
+        <Route path="/estado" element={<Estado/>} />
+        <Route path="/consultar" element={<Consultar/>} />
+        <Route path="/cargar" element={<Cargar/>} />
+      </Routes>
+    </BrowserRouter>
     </Container>
+
   );
 }
 
