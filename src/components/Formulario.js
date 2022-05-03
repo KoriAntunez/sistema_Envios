@@ -88,126 +88,126 @@ export class Formulario extends React.Component {
             <Row>
             <Col xs XS="5">
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Inmueble</Form.Label>
+                <Form.Label>Código de envio</Form.Label>
                 <Form.Control required  value= {this.state.inmueble}   onChange={this.onChangeInmueble.bind(this)} type="name" name="inmueble" placeholder="Ingrese nombre de Inmueble" />
               </Form.Group>          
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Cantidad máxima de visitantes</Form.Label>
+                <Form.Label>Cedula de Emisor</Form.Label>
                 <Form.Control required value= {this.state.cantidad_visitantes} onChange={this.onChangeCantidad.bind(this)} type="number" name="cantidad_visitantes" placeholder="Ingrese la cantidad de visitantes" />
               </Form.Group> 
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Fecha de visita</Form.Label>
-                <Form.Control required value= {this.state.fecha} onChange={this.onChangeFecha.bind(this)} type="date" name="fecha" placeholder="dd/mm/yyyy" />
+                <Form.Label>Nombre de emisor</Form.Label>
+                <Form.Control required value= {this.state.fecha} onChange={this.onChangeFecha.bind(this)} type="name" name="fecha" placeholder="dd/mm/yyyy" />
               </Form.Group>          
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de inicio</Form.Label>
-                <Form.Control required value= {this.state.hora_inicio} onChange={this.onChangeHoraInicio.bind(this)} type="time" name="hora_inicio" placeholder="Ingrese hora de inicio" />
+                <Form.Label>Correo de emisor</Form.Label>
+                <Form.Control required value= {this.state.hora_inicio} onChange={this.onChangeHoraInicio.bind(this)} type="mail" name="hora_inicio" placeholder="Ingrese hora de inicio" />
               </Form.Group> 
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Direccion de emisor</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Ciudad de emisor</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Provincia de emisor</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Codigo postal emisor</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Código de dirección de emisor</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Cedula Recepción</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="number" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Nombre de recepcionista</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>correo recepcionista</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
             </Col>
               
 
               <Col xs XS="5">
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Inmueble</Form.Label>
+                <Form.Label>Direccion de recepcionista </Form.Label>
                 <Form.Control required  value= {this.state.inmueble}   onChange={this.onChangeInmueble.bind(this)} type="name" name="inmueble" placeholder="Ingrese nombre de Inmueble" />
               </Form.Group>          
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Cantidad máxima de visitantes</Form.Label>
-                <Form.Control required value= {this.state.cantidad_visitantes} onChange={this.onChangeCantidad.bind(this)} type="number" name="cantidad_visitantes" placeholder="Ingrese la cantidad de visitantes" />
+                <Form.Label>Ciudad recepcionista</Form.Label>
+                <Form.Control required value= {this.state.ciudad_recepcion} onChange={this.onChangeCantidad.bind(this)} type="name" name="ciudad_recepcion" />
               </Form.Group> 
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Fecha de visita</Form.Label>
-                <Form.Control required value= {this.state.fecha} onChange={this.onChangeFecha.bind(this)} type="date" name="fecha" placeholder="dd/mm/yyyy" />
+                <Form.Label>Provincia de recepcionista</Form.Label>
+                <Form.Control required value= {this.state.fecha} onChange={this.onChangeFecha.bind(this)} type="name" name="fecha" placeholder="dd/mm/yyyy" />
               </Form.Group>          
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de inicio</Form.Label>
-                <Form.Control required value= {this.state.hora_inicio} onChange={this.onChangeHoraInicio.bind(this)} type="time" name="hora_inicio" placeholder="Ingrese hora de inicio" />
+                <Form.Label>Codigo postal de recepcionista</Form.Label>
+                <Form.Control required value= {this.state.hora_inicio} onChange={this.onChangeHoraInicio.bind(this)} type="name" name="hora_inicio" placeholder="Ingrese hora de inicio" />
               </Form.Group> 
     
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Código de país de recepcionista</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Paquete tamaño</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="number" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Paquete ancho</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="number" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Paquete altura</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="number" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Paquete dimension unidad</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="number" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Paquete peso</Form.Label>
+                <Form.Control required value= {this.state.peso} onChange={this.onChangeHoraFin.bind(this)} type="number" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Unidad de peso</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="name" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Hora de fin</Form.Label>
-                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="time" name="hora_fin" placeholder="Ingrese hora de fin" />
+                <Form.Label>Estado</Form.Label>
+                <Form.Control required value= {this.state.fin} onChange={this.onChangeHoraFin.bind(this)} type="status" name="hora_fin" placeholder="Ingrese hora de fin" />
               </Form.Group> 
 
               </Col>
