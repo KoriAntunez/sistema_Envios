@@ -35,7 +35,7 @@ class Csv extends React.Component {
     var data = result.data;
     console.log(data);
    
-    axios.post('http://localhost:5000/api/envios/recibido',data).
+    axios.post('http://localhost:5000/data/registro',data).
     then(function(){alert("DATOS GUARDADOS")})
 
     alert("aceptado")
