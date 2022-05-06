@@ -2,6 +2,10 @@ import React  from "react";
 import { Container, Row } from "react-bootstrap";
 import Navbar from "../components/navbar";
 import Csv from "../components/Csv.js";
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 const Cargar = () => {
     return(
         <>
