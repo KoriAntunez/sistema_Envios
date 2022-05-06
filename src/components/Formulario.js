@@ -212,7 +212,7 @@ export class Formulario extends React.Component {
 
               </Col>
          </Row>
-              <Col className="App">
+              <Col className="App m-5">
               <Button type="submit">
                   Guardar
               </Button>
