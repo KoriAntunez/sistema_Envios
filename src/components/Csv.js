@@ -64,8 +64,4 @@ class Csv extends React.Component {
     );
   }
 }
-<<<<<<< Updated upstream
 export default Csv;
-=======
-export default Csv;
->>>>>>> Stashed changes
