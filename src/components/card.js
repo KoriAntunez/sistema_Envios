@@ -52,7 +52,7 @@ actualizar(id,status){
   if (confirmation) {
       axios.put('http://localhost:5000/data/reserva/'+id,[status]).
           then( () => {
-              alert("RESERVADO")
+              alert("ACTUALIZADO")
               window.location.reload()
               
       }).catch(function () {
