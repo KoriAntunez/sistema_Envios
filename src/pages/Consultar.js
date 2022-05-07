@@ -1,6 +1,12 @@
-import React  from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Input, Col, Table } from "react-bootstrap";
 import Navbar from "../components/navbar";
+const { Column } = Table;
+const { Search } = Input;
+
+
+
+
 
 const Consultar = () => {
     return(
