@@ -46,11 +46,11 @@ delete(id){
 }
 */
 
-actualizar1(id){ 
+actualizar(id,status){ 
   let confirmation = window.confirm('¿Estas seguro de actualizar el estado?') ? true : false
-
+  console.log(status)
   if (confirmation) {
-      axios.put('http://localhost:5000/data/reserva/'+id).
+      axios.put('http://localhost:5000/data/reserva/'+id,[status]).
           then( () => {
               alert("RESERVADO")
               window.location.reload()
@@ -85,10 +85,10 @@ actualizar1(id){
                    </Container>
                   
                    <Container><Row>
-                       <Col xs={3}><Button variant="primary" onClick={() => this.actualizar1(prodct.cod_envio)} >En proceso</Button> </Col>
-                       <Col xs={3}> <Button variant="primary" onClick={() => this.actualizar2(prodct.cod_envio)} >En camino</Button></Col>
-                       <Col xs={3} ><Button variant="primary" onClick={() => this.actualizar3(prodct.cod_envio)} >Recibio paquete</Button></Col>
-                       <Col xs={3}> <Button variant="danger" onClick={() => this.actualizar4(prodct.cod_envio)} >Cancelado</Button></Col>
+                       <Col xs={3}><Button variant="primary" onClick={() => this.actualizar(prodct.cod_envio,prodct.status="En proceso")} >En proceso</Button> </Col>
+                       <Col xs={3}> <Button variant="primary" onClick={() => this.actualizar(prodct.cod_envio,prodct.status="En camino")} >En camino</Button></Col>
+                       <Col xs={3} ><Button variant="primary" onClick={() => this.actualizar(prodct.cod_envio,prodct.status="Recibio paquete")} >Recibio paquete</Button></Col>
+                       <Col xs={3}> <Button variant="danger" onClick={() => this.actualizar(prodct.cod_envio,prodct.status="Cancelado")} >Cancelado</Button></Col>
                    
                    </Row></Container>
                   </Card.Body>
