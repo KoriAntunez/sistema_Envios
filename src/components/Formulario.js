@@ -86,7 +86,7 @@ export class Formulario extends React.Component {
 
             <Form onSubmit={this.handleForm.bind(this)}>
             <Row>
-            <Col xs XS="5">
+            <Col xs xs="5">
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Código de envio</Form.Label>
                 <Form.Control required  value= {this.state.inmueble}   onChange={this.onChangeInmueble.bind(this)} type="name" name="inmueble" placeholder="Ingrese nombre de Inmueble" />
@@ -149,7 +149,7 @@ export class Formulario extends React.Component {
             </Col>
               
 
-              <Col xs XS="5">
+              <Col xs xs="5">
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Direccion de recepcionista </Form.Label>
                 <Form.Control required  value= {this.state.inmueble}   onChange={this.onChangeInmueble.bind(this)} type="name" name="inmueble" placeholder="Ingrese nombre de Inmueble" />

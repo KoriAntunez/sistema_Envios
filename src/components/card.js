@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 
 
@@ -45,7 +46,7 @@ delete(id){
 }
 */
 
-actualizar(id){ 
+actualizar1(id){ 
   let confirmation = window.confirm('¿Estas seguro de actualizar el estado?') ? true : false
 
   if (confirmation) {
@@ -53,6 +54,7 @@ actualizar(id){
           then( () => {
               alert("RESERVADO")
               window.location.reload()
+              
       }).catch(function () {
           alert("Error inesperado !!!")
       })
@@ -62,44 +64,39 @@ actualizar(id){
 
 
     render (){
-        return ( <form>
+        return ( <Form>
     <Container >
       
       <Row>
       {
                     this.state.list.map((prodct) =>
-                    <Card style={{width: "32rem" ,  margin:"0.5rem", borderColor:"blue", borderRadius:"1rem"}}>
-                    <Card.Body>
-                    <Card.Title ></Card.Title>
-                    <Card.Text>
-                   <Container fluid >
-                     <Row><Col><h6>Codigo de envío: {prodct.cod_envio} </h6></Col></Row>
+                   
+                    <Card  style={{width: "32rem" ,  margin:"0.5rem", borderColor:"blue", borderRadius:"1rem"}}>
+                    <Card.Body>   
+                   <Container fluid  >
+                     <Row><Col>Codigo de envío: {prodct.cod_envio} </Col></Row>
                       
-                     <Row><Col><h6>DNI emisor : {prodct.DNI_emisor} </h6></Col></Row>
-                     <Row><Col><h6>Emisor: {prodct.address_from_name} </h6></Col></Row>
-                     <Row><Col><h6>DNI recepcionista : {prodct.DNI_recepcion} </h6></Col></Row>
-                     <Row><Col><h6>Recepcionista: {prodct.address_to_name} </h6></Col></Row>
-                     <Row><Col><h6>Estado: {prodct.status} </h6></Col></Row>
+                     <Row><Col>DNI emisor : {prodct.DNI_emisor} </Col></Row>
+                  <Row><Col>Emisor: {prodct.address_from_name} </Col></Row>
+                     <Row><Col>DNI recepcionista : {prodct.DNI_recepcion} </Col></Row>
+                     <Row><Col>Recepcionista: {prodct.address_to_name} </Col></Row>
+                     <Row><Col>Estado: {prodct.status} </Col></Row>
                   
                    </Container>
-                   </Card.Text>
+                  
                    <Container><Row>
-                       <Col xs={3}><h1 ><Button variant="primary" onClick={() => this.actualizar1(prodct.cod_envio)} >En proceso</Button></h1>   </Col>
-                       <Col xs={3}> <h1 ><Button variant="primary" onClick={() => this.actualizar2(prodct.cod_envio)} >En camino</Button></h1></Col>
-                       <Col xs={3} ><h1 ><Button variant="primary" onClick={() => this.actualizar3(prodct.cod_envio)} >Recibio paquete</Button></h1></Col>
-                       <Col xs={3}> <h1 ><Button variant="danger" onClick={() => this.actualizar4(prodct.cod_envio)} >Cancelado</Button></h1></Col>
+                       <Col xs={3}><Button variant="primary" onClick={() => this.actualizar1(prodct.cod_envio)} >En proceso</Button> </Col>
+                       <Col xs={3}> <Button variant="primary" onClick={() => this.actualizar2(prodct.cod_envio)} >En camino</Button></Col>
+                       <Col xs={3} ><Button variant="primary" onClick={() => this.actualizar3(prodct.cod_envio)} >Recibio paquete</Button></Col>
+                       <Col xs={3}> <Button variant="danger" onClick={() => this.actualizar4(prodct.cod_envio)} >Cancelado</Button></Col>
                    
                    </Row></Container>
-                       
-
-        
-
-                   </Card.Body>
+                  </Card.Body>
                  </Card>
                   )
                 }
      </Row>
-    </Container></form>);
+    </Container></Form>);
     }
 }
 export default Cambiar;
