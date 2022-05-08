@@ -1,9 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Form, Col, Table, FormControl, Button } from "react-bootstrap";
 import Navbar from "../components/navbar";
-const { Column } = Table;
-const Consultar = () => {
-    return(
+import axios from 'axios';
+
+class Consultar extends React.Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        list: []
+    }
+
+    this.consultar();
+}
+
+consultar(){
+    fetch('http://localhost:5000/products')
+    .then(response => response.json())
+    .then( (data) => {
+        let state = this.state;
+        state.list = data;
+        this.setState(state)
+    });
+}
+
+render () {
+  return (
         <>
         <Navbar/>
         <Container>
@@ -52,13 +74,19 @@ const Consultar = () => {
               <thead>
                   <tr>
                   <th>#</th>
-                  <th>Nombre producto</th>
-                  <th>Precio</th>
-                  <th>Fecha Act</th>
+                  <th>Código de envio</th>
+                  <th>DNI de emisor</th>
+                  <th>Nombre de emisor</th>
+                  <th>Correo de emisor</th>
+                  <th>Ciudad de enviío</th>
+                  <th>DNI del recpetor</th>
+                  <th>Nombre del recpetor</th>
+                  <th>Correo del receptor</th>
+                  <th>Ciudad del receptor</th>
                   </tr>
               </thead>
             </Table>       
         </> 
-        );
+        )};
 }
 export default Consultar;
