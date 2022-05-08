@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Input, Col, Table } from "react-bootstrap";
+import { Container, Row, Form, Col, Table } from "react-bootstrap";
 import Navbar from "../components/navbar";
+<<<<<<< Updated upstream
 const { Column } = Table;
 
 
 
 
 
+=======
+>>>>>>> Stashed changes
 
 const Consultar = () => {
     return(
@@ -17,7 +20,7 @@ const Consultar = () => {
                 <h1>Consultar Envio</h1>
                 <h4>Consulte por su Cédula o número de orden de compra</h4>
             </Row>
-        </Container>
+      </Container>
         </> 
         );
 }
