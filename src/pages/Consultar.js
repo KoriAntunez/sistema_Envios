@@ -1,138 +1,90 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Form, Col, Table, FormControl, Button } from "react-bootstrap";
-import Navbar from "../components/navbar";
+import React, {useState, useEffect} from 'react'
 import appConfig from "../appConfig";
-import axios from "axios";
+import Navbar from "../components/navbar";
+import { Container, Row } from "react-bootstrap";
+const Consultar = () => {
+  //setear los hooks useState
+  const [ users, setUsers ] = useState([])
+  const [ search, setSearch ] = useState("")
 
-class Consultar extends React.Component{
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-        list: []
-    }
-    this.envios();
+  //función para traer los datos de la API
+  const URL = appConfig.urlBackEnd+'/data'
+
+  const showData = async () => {
+    const response = await fetch(URL)
+    const data = await response.json()
+    //console.log(data)
+    setUsers(data)
+  }   
+   //función de búsqueda
+  const searcher = (e) => {
+      setSearch(e.target.value)  
+      console.log(e.target.value) 
   }
   
-  onChangecod_envio(event){
-    let state = this.state
-    state.cod_envio =  event.target.value
-    this.setState(state)
-  }
+   //metodo de filtrado 1 
+    let results = []
+   if(!search)
+   {
+       results = users
+   }
+   else {
+        results = users.filter( (dato) =>
+        dato.cod_envio.toLowerCase().includes(search.toLocaleLowerCase())
+    )
+    
+   } 
+   
+   
 
-  onChangeDNI_recepcion(event){
-    let state = this.state
-    state.DNI_recepcion =  event.target.value
-    this.setState(state)
-  } 
+
+   useEffect( ()=> {
+    showData()
+  }, [])
   
-envios(){
-    fetch(appConfig.urlBackEnd+'/data')
-    .then(response => response.json())
-    .then( (data) => {
-        let state = this.state;
-        state.list = data;
-        this.setState(state)
-    });
-  }
-
-
-consulta(cod_envio,DNI_recepcion){
-    axios.get(appConfig.urlBackEnd+'/cedula',[cod_envio,DNI_recepcion]).
-    then( function (){
-      alert([cod_envio,DNI_recepcion])
-}).catch(function () {
-      alert("Error inesperado !!!")
-})
-
-}
-
-render () {
+  //renderizamos la vista
   return (
-        <>
+      
+    <div>
         <Navbar/>
         <Container>
             <Row className="justify-content-md-center">
                 <h1>Consultar Envio</h1>
-                <h4>Consulte por su Cédula o número de orden de compra</h4>
+                <h4>Consulte por código de envio</h4>
             </Row>
         </Container>
-            <Form>
-              <Row>
-                <Col xs={6}>
-                  <Form.Label>DNI</Form.Label>
-                   <Row>
-                    <Col xs={10}>
-                      <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2"
-                        aria-label="Search"
-                        value= {this.state.DNI_recepcion}
-                        onChange={this.onChangeDNI_recepcion.bind(this)}
-                      />
-                   </Col>
-                   <Col xs={2}>               
-                    <Button variant="outline-success" onClick={() => this.consulta(null,this.state.DNI_recepcion)}>Search</Button>
-                   </Col>
-                  </Row>                
-                </Col>
-                <Col xs={6}>
-                  <Form.Label>Código de envio</Form.Label>
-                   <Row>
-                    <Col xs={10}>
-                      <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2"
-                        aria-label="Search"
-                        value= {this.state.cod_envio}
-                        onChange={this.onChangecod_envio.bind(this)}
-                      />
-                   </Col>
-                   <Col xs={2}>               
-                    <Button variant="outline-success"  onClick={() => this.consulta(this.state.cod_envio,null)}>Search</Button>
-                   </Col>
-                  </Row>                
-                </Col>
-              </Row>
-            </Form>
-
-            <Table striped bordered hover className="mt-5">
-              <thead>
-                  <tr>
-                  <th>Código de envio</th>
+        <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
+        <table className='table table-striped table-hover mt-5 shadow-lg'>
+            <thead>
+                <tr >
+                <th>Código de envio</th>
                   <th>DNI de emisor</th>
                   <th>Nombre de emisor</th>
                   <th>Correo de emisor</th>
-                  <th>Ciudad de enviío</th>
+                  <th>Ciudad de envío</th>
                   <th>DNI del recpetor</th>
                   <th>Nombre del recpetor</th>
                   <th>Provincia del receptor</th>
                   <th>Ciudad del receptor</th>
-                  </tr>
-              </thead>
-              <tbody>
-                
-                {
-                    this.state.list.map((prodct) =>
-                    <tr>
-                        <td>{prodct.cod_envio}</td>
-                        <td>{prodct.DNI_emisor}</td>
-                        <td>{prodct.address_from_name}</td>
-                        <td>{prodct.address_from_email}</td>
-                        <td>{prodct.address_from_city}</td>
-                        <td>{prodct.DNI_recepcion}</td>
-                        <td>{prodct.address_to_name}</td>
-                        <td>{prodct.address_to_province}</td>
-                        <td>{prodct.address_to_city}</td>
-                    </tr>
-                  )
-                }
-                
+                </tr>
+            </thead>
+            <tbody>
+                { results.map( (user) => (
+                    <tr key={user.id}>
+                        <td>{user.cod_envio}</td>
+                        <td>{user.DNI_emisor}</td>
+                        <td>{user.address_from_name}</td>
+                        <td>{user.address_from_email}</td>
+                        <td>{user.address_from_city}</td>
+                        <td>{user.DNI_recepcion}</td>
+                        <td>{user.address_to_name}</td>
+                        <td>{user.address_to_province}</td>
+                        <td>{user.address_to_city}</td>
+                    </tr>                    
+                ))}
             </tbody>
-            </Table>       
-        </> 
-        )};
+        </table>
+    </div>
+  )
 }
-export default Consultar;
+export default Consultar
