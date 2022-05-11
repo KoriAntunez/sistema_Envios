@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App';
 import {  Nav, Col,Row } from "react-bootstrap";
-import imagen from "./imagen/imagen.png"
 
 export class Navbar extends React.Component {
     render() {
@@ -21,7 +20,7 @@ export class Navbar extends React.Component {
                     <Nav.Link  eventKey="link-1" href="/estado">Estado envio</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="justify-content-end" >
-                    <Nav.Link ><img style={{width: "5rem"}} src={imagen}/></Nav.Link>
+                    <Nav.Link href="/1" eventKey="disabled" disabled>LOGO</Nav.Link>
                 </Nav.Item>
             </Nav>
         );
