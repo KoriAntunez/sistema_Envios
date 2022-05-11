@@ -22,7 +22,7 @@ class Cambiar extends React.Component{
 }
 
 consultar(){
-  fetch('http://localhost:5000/data')
+  fetch('https://sistemaenvios.herokuapp.com/data')
   .then(response => response.json())
   .then( (data) => {
       let state = this.state;
@@ -50,7 +50,7 @@ actualizar(id,status){
   let confirmation = window.confirm('¿Estas seguro de actualizar el estado?') ? true : false
   console.log(status)
   if (confirmation) {
-      axios.put('http://localhost:5000/data/reserva/'+id,[status]).
+    axios.put('https://sistemaenvios.herokuapp.com/data/reserva/'+id,[status]).
           then( () => {
               alert("ACTUALIZADO")
               window.location.reload()
