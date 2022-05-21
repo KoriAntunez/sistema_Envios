@@ -73,14 +73,15 @@ actualizar(id,status){
                    
                     <Card  style={{width: "32rem" ,  margin:"0.5rem", borderColor:"blue", borderRadius:"1rem"}}>
                     <Card.Body>   
-                   <Container fluid  >
-                     <Row><Col>Codigo de envío: {prodct.cod_envio} </Col></Row>
+                   <Container fluid   key={prodct._id} >
+                     <Row>
+                       <Col>Codigo de envío: {prodct.cod_envio} </Col>
                       
-                     <Row><Col>DNI emisor : {prodct.DNI_emisor} </Col></Row>
-                  <Row><Col>Emisor: {prodct.address_from_name} </Col></Row>
-                     <Row><Col>DNI recepcionista : {prodct.DNI_recepcion} </Col></Row>
-                     <Row><Col>Recepcionista: {prodct.address_to_name} </Col></Row>
-                     <Row><Col>Estado: {prodct.status} </Col></Row>
+                     <Col>DNI emisor : {prodct.DNI_emisor} </Col>
+                  <Col>Emisor: {prodct.address_from_name} </Col>
+                    <Col>DNI recepcionista : {prodct.DNI_recepcion} </Col>
+                     <Col>Recepcionista: {prodct.address_to_name} </Col>
+                     <Col>Estado: {prodct.status} </Col></Row>
                   
                    </Container>
                   
